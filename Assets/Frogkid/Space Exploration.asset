@@ -15,5 +15,11 @@ MonoBehaviour:
   gameTime: 0
   music: {fileID: 8300000, guid: 785daa7603137864b953b12c93eba363, type: 3}
   volume: 1
-  sounds: []
+  sounds:
+  - soundName: win
+    clip: {fileID: 8300000, guid: 43563de31a65b65409e47bb8f7497adc, type: 3}
+    volume: 1
+    minPitch: 0
+    maxPitch: 0
+    source: {fileID: 0}
   gameWin: 0

@@ -12,7 +12,7 @@ namespace FROGKID
         float horizontal;
         float vertical;
 
-        public float runSpeed = 20.0f;
+        public float runSpeed = 7.0f;
 
         [SerializeField]
         SeekMinigame seekMinigame;
@@ -20,35 +20,72 @@ namespace FROGKID
         [SerializeField]
         Animator animator;
 
+        [SerializeField]
+        Transform transform;
+
+        [SerializeField]
+        float gravity = 1.0f;
+
+        Transform homePlanet;
+
+        bool lose;
+        bool gameover;
+
         void Start()
         {
             body = GetComponent<Rigidbody2D>();
             body.freezeRotation = true;
+            lose = false;
+            gameover = false;
         }
 
         void Update()
         {
-            horizontal = Input.GetAxisRaw("Horizontal");
-            vertical = Input.GetAxisRaw("Vertical");
+            if (!gameover)
+            {
+                horizontal = Input.GetAxisRaw("Horizontal");
+                vertical = Input.GetAxisRaw("Vertical");
+            } else if(lose)
+            {
+                // lose
+                transform.localScale = transform.localScale * 0.99f;
+            } else
+            {
+                // win 
+                transform.localScale = transform.localScale * 0.99f;
+                body.velocity += (Vector2) (gravity * (homePlanet.transform.position - transform.position));
+
+            }
+
         }
 
         private void FixedUpdate()
         {
-            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+            //body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+            body.AddForce(new Vector2(horizontal * runSpeed, vertical * runSpeed));
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             Planet planet = collision.gameObject.GetComponent<Planet>();
-            if (planet != null)
+            if (planet != null && !gameover)
             {
                 if (planet.getIsHome())
                 {
                     animator.SetTrigger("win");
+                    gameover = true;
+                    homePlanet = planet.transform;
+                    //body.constraints = RigidbodyConstraints2D.FreezePosition;
                     seekMinigame.doWin();
                 } else
                 {
+                    gameover = true;
+                    lose = true;
+                    body.AddForce(Vector3.left * 10.0f);
+                    body.freezeRotation = false;
+                    body.AddTorque(200.0f);
                     seekMinigame.doLose();
+                    
                 }
             }
                 

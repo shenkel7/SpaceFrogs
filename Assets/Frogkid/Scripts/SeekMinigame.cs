@@ -48,16 +48,6 @@ namespace FROGKID
                 }
             }
 
-            //// select 3 random planets
-            //for(int i = 0; i < 3 && i < numPlanets; i++)
-            //{
-            //    int index = Random.Range(0, planets.Count);
-            //    GameObject p = planets[index];
-            //    selectedPlanets.Add(p);
-            //    planets.RemoveAt(index);
-            //}
-
-
             Debug.Log(selectedPlanets.Count);
         }
 
