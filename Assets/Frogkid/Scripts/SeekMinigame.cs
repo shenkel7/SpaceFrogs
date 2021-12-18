@@ -8,13 +8,9 @@ namespace FROGKID
 {
     public class SeekMinigame : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject frog = null;
 
         [SerializeField]
         private List<Planet> planets = null;
-
-        private List<Planet> selectedPlanets;
 
         [SerializeField]
         private List<int> planetSelector;
@@ -25,10 +21,6 @@ namespace FROGKID
         void Start()
         {
             MinigameManager.Instance.minigame.gameWin = false;
-            selectedPlanets = new List<Planet>();
-            int numPlanets = planets.Count;
-
-
             homePlanet = Random.Range(0, 3);
 
             for(int i = 0; i < 3; i++)
@@ -44,7 +36,6 @@ namespace FROGKID
                 {
                     // set home planet sprite
                     planets[i].setPlanetNum(0);
-                    Debug.Log(i);
                 }
             }
 
@@ -60,7 +51,6 @@ namespace FROGKID
 
         public void doWin()
         {
-            Debug.Log("win");
             if (!MinigameManager.Instance.minigame.gameWin)
             {
                 MinigameManager.Instance.minigame.gameWin = true;
@@ -71,7 +61,6 @@ namespace FROGKID
         public void doLose()
         {
             MinigameManager.Instance.PlaySound("lose");
-            Debug.Log("lose");
         }
     }
 }

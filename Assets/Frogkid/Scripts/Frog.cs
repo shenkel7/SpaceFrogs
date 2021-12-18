@@ -24,7 +24,10 @@ namespace FROGKID
         Transform transform;
 
         [SerializeField]
-        float gravity = 1.0f;
+        Collider2D collider;
+
+        [SerializeField]
+        float gravity = 0.1f;
 
         Transform homePlanet;
 
@@ -53,7 +56,7 @@ namespace FROGKID
             {
                 // win 
                 transform.localScale = transform.localScale * 0.99f;
-                body.velocity += (Vector2) (gravity * (homePlanet.transform.position - transform.position));
+                body.velocity = (Vector2) (gravity * (homePlanet.transform.position - transform.position));
 
             }
 
@@ -76,6 +79,7 @@ namespace FROGKID
                     gameover = true;
                     homePlanet = planet.transform;
                     //body.constraints = RigidbodyConstraints2D.FreezePosition;
+                    collider.enabled = false;
                     seekMinigame.doWin();
                 } else
                 {
@@ -83,6 +87,8 @@ namespace FROGKID
                     lose = true;
                     animator.SetTrigger("lose");
                     body.AddForce(Vector3.left * 10.0f);
+                    //body.AddForce(transform.TransformDirection(Vector3.left));
+                    collider.enabled = false;
                     body.freezeRotation = false;
                     body.AddTorque(200.0f);
                     seekMinigame.doLose();
