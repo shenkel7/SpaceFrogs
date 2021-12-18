@@ -81,6 +81,7 @@ namespace FROGKID
                 {
                     gameover = true;
                     lose = true;
+                    animator.SetTrigger("lose");
                     body.AddForce(Vector3.left * 10.0f);
                     body.freezeRotation = false;
                     body.AddTorque(200.0f);

@@ -19,7 +19,7 @@ MonoBehaviour:
   - soundName: win
     clip: {fileID: 8300000, guid: 43563de31a65b65409e47bb8f7497adc, type: 3}
     volume: 1
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 1
+    maxPitch: 1
     source: {fileID: 0}
   gameWin: 0
