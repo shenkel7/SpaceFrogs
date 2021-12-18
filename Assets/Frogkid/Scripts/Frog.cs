@@ -17,6 +17,9 @@ namespace FROGKID
         [SerializeField]
         SeekMinigame seekMinigame;
 
+        [SerializeField]
+        Animator animator;
+
         void Start()
         {
             body = GetComponent<Rigidbody2D>();
@@ -41,6 +44,7 @@ namespace FROGKID
             {
                 if (planet.getIsHome())
                 {
+                    animator.SetTrigger("win");
                     seekMinigame.doWin();
                 } else
                 {

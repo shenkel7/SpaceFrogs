@@ -8,11 +8,6 @@ namespace FROGKID
 {
     public class SeekMinigame : MonoBehaviour
     {
-
-        public Text UIText;
-        public string startText;
-        public string winText;
-
         [SerializeField]
         private GameObject frog = null;
 
@@ -29,7 +24,6 @@ namespace FROGKID
         // Start is called before the first frame update
         void Start()
         {
-            UIText.text = startText;
             MinigameManager.Instance.minigame.gameWin = false;
             selectedPlanets = new List<Planet>();
             int numPlanets = planets.Count;
@@ -79,7 +73,6 @@ namespace FROGKID
             if (!MinigameManager.Instance.minigame.gameWin)
             {
                 MinigameManager.Instance.minigame.gameWin = true;
-                UIText.text = winText;
                 MinigameManager.Instance.PlaySound("win");
             }
         }
