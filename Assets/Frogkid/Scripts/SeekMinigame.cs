@@ -48,7 +48,8 @@ namespace FROGKID
                 }
             }
 
-            Debug.Log(selectedPlanets.Count);
+            MinigameManager.Instance.PlaySound("drum");
+
         }
 
         // Update is called once per frame
@@ -69,6 +70,7 @@ namespace FROGKID
 
         public void doLose()
         {
+            MinigameManager.Instance.PlaySound("lose");
             Debug.Log("lose");
         }
     }

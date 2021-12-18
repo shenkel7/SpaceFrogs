@@ -13,12 +13,24 @@ MonoBehaviour:
   m_Name: Space Exploration
   m_EditorClassIdentifier: 
   gameTime: 0
-  music: {fileID: 8300000, guid: 785daa7603137864b953b12c93eba363, type: 3}
-  volume: 1
+  music: {fileID: 8300000, guid: 000f52201bf78443cb3f4e919158730c, type: 3}
+  volume: 0.4
   sounds:
+  - soundName: drum
+    clip: {fileID: 8300000, guid: 2f7e98818f2e245e290437cb2a9f6251, type: 3}
+    volume: 0.42
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
   - soundName: win
     clip: {fileID: 8300000, guid: 43563de31a65b65409e47bb8f7497adc, type: 3}
     volume: 1
+    minPitch: 1
+    maxPitch: 1
+    source: {fileID: 0}
+  - soundName: lose
+    clip: {fileID: 8300000, guid: 2267326e31d924e438b6f400539a99c9, type: 3}
+    volume: 0.61
     minPitch: 1
     maxPitch: 1
     source: {fileID: 0}
