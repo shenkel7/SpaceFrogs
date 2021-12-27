@@ -1,3 +1,11 @@
+## Space Frogs! 
+
+A cute little 4 second minigame made for the EGADS Mega Microjam 2021.
+
+![win](https://media.discordapp.net/attachments/803718161949655042/925113886233997402/lost_frog_planet.gif)
+![lose](https://media.discordapp.net/attachments/803718161949655042/925113887249027082/lost_frog_planet_2.gif)
+
+## EGADS Mega Micro Jam Submission
 
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ...,,,..........,,,...(@@@@@@@@@*,,,,...,,...........,,....,,,,,,,,,,,,,...,,,..
