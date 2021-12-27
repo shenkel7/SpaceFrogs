@@ -1,4 +1,4 @@
-## Space Frogs! 
+## Find the Lost Frog Planet! 
 
 A cute little 4 second minigame made for the EGADS Mega Microjam 2021.
 
